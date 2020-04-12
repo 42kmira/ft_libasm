@@ -6,9 +6,12 @@
 #    By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 22:24:44 by xinu              #+#    #+#              #
-#    Updated: 2020/04/10 23:00:38 by xinu             ###   ########.fr        #
+#    Updated: 2020/04/11 22:02:35 by xinu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# nasm -f elf64 hello.asm -o hello.o
+# ld -o hello hello.o -m elf_x86_64
 
 NAME = libasm.a
 
@@ -44,6 +47,6 @@ save: fclean
 
 TEST_SUITE = test_program
 
-test: fclean
+test: re
 	rm -f $(TEST_SUITE)
-	gcc -o $(TEST_SUITE) $(FLAGS) main.c
+	gcc -o $(TEST_SUITE) $(FLAGS) main.c $(NAME)

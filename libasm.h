@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libasm.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/10 22:31:42 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/11 15:42:01 by xinu             ###   ########.fr       */
+/*   Created: 2020/04/10 23:06:03 by xinu              #+#    #+#             */
+/*   Updated: 2020/04/10 23:07:11 by xinu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	result;
+#ifndef LIBASM_H
+# define LIBASM_H
 
-	result = 0;
-	while (str[result] != '\0')
-		result++;
-	return (result);
-}
+int	ft_strlen(char *str);
+
+#endif
