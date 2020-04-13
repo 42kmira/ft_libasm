@@ -10,8 +10,6 @@ say_hi:
 					; Parameters are like write (int fd, const void *buff, size_t len);
 
 	xor edi, edi	;Return value = 0
-	mov eax,60		;system call number (sys_exit)
-	syscall			;call kernel
 		ret
 
 section .data

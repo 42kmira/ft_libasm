@@ -6,7 +6,7 @@
 /*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 23:06:03 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/10 23:07:11 by xinu             ###   ########.fr       */
+/*   Updated: 2020/04/12 18:02:23 by xinu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 # define LIBASM_H
 
 int	ft_strlen(char *str);
+
+extern void	other();
+extern void say_hi();
 
 #endif

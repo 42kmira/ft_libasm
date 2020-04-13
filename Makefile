@@ -6,7 +6,7 @@
 #    By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 22:24:44 by xinu              #+#    #+#              #
-#    Updated: 2020/04/11 22:02:35 by xinu             ###   ########.fr        #
+#    Updated: 2020/04/12 17:55:56 by xinu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,10 @@ NAME = libasm.a
 FLAGS = -Wall -Wextra -Werror
 
 FILES = \
-	ft_strlen \
+	other \
+	say_hi \
 
-SRCS = $(addprefix srcs/, $(addsuffix .c, $(FILES)))
+SRCS = $(addprefix srcs/, $(addsuffix .s, $(FILES)))
 
 OBJS = $(addsuffix .o, $(FILES))
 
@@ -30,7 +31,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 $(OBJS):
-	gcc -c $(FLAGS) $(SRCS)
+	$(foreach file, $(FILES), nasm -f elf64 srcs/$(file).s -o $(file).o;)
 
 clean:
 	rm -f $(OBJS)
@@ -50,3 +51,6 @@ TEST_SUITE = test_program
 test: re
 	rm -f $(TEST_SUITE)
 	gcc -o $(TEST_SUITE) $(FLAGS) main.c $(NAME)
+
+test_clean: fclean
+	rm -f test_program
