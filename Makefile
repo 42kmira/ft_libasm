@@ -6,7 +6,7 @@
 #    By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 22:24:44 by xinu              #+#    #+#              #
-#    Updated: 2020/04/13 17:16:47 by xinu             ###   ########.fr        #
+#    Updated: 2020/04/13 21:58:06 by xinu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,13 +53,11 @@ save: fclean
 TEST_SUITE = test_program
 
 test: re test_clean
-	gcc -c utils.c
-	gcc -o $(TEST_SUITE) $(FLAGS) main.c $(NAME) utils.o
+	gcc -o $(TEST_SUITE) $(FLAGS) main.c $(NAME)
 	clear
 
 quick: test
 	@./$(TEST_SUITE)
 
 test_clean: fclean
-	rm -f utils.o
 	rm -f $(TEST_SUITE)

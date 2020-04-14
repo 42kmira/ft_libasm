@@ -6,12 +6,12 @@ extern __errno_location
 ft_write:
 	mov eax, 1
 	syscall
+	push rax
 
 	cmp rax, 0
 	jle error
 
-exit:
-	mov rax, rdx
+	pop rax
 	ret
 
 error:

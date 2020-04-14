@@ -6,7 +6,7 @@
 /*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:48:05 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/13 21:44:57 by xinu             ###   ########.fr       */
+/*   Updated: 2020/04/13 22:31:13 by xinu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,10 @@
 #define WRITE(var1, var2, var3, ret, err)	\
 	errno = 0;													\
 	syst_##ret = write(syst_##var1, syst_##var2, syst_##var3);	\
+	NL															\
 	syst_##err = errno;											\
 	mine_##ret = ft_write(mine_##var1, mine_##var2, mine_##var3);			\
+	NL															\
 	mine_##err = errno;											\
 	printf(BOLDCYAN"[SYST]: | RET: %d and ERR: %d |\n", syst_##ret, syst_##err);	\
 	printf(BOLDPURPLE"[MINE]: | RET: %d and ERR: %d |\n", mine_##ret, mine_##err);	\
