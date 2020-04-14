@@ -6,7 +6,7 @@
 /*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/11 18:28:38 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/13 22:47:50 by xinu             ###   ########.fr       */
+/*   Updated: 2020/04/13 23:46:38 by xinu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ int		main(void)
 
 	SET(fd, 1)
 	SET(count, -2)
+	SET(str_1, NULL)
 	WRITE(fd, str_1, count, bytes_read, error);
+
+	SET(str, "")
+	STRDUP(str, out_str, error)
 
 	return (0);
 }
