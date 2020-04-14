@@ -6,25 +6,26 @@
 /*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/11 18:28:38 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/12 18:02:01 by xinu             ###   ########.fr       */
+/*   Updated: 2020/04/13 17:18:07 by xinu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #include "libasm.h"
 
 int		main(void)
 {
-	int		len;
-	char	str[] = "Hello World!";
+	char	*str;
 
-	// len = ft_strlen(str);
-	len = 4;
-	printf("STR: %s has %d length\n", str, len);
-	say_hi();
-	printf("Er something\n");
-	printf("And insurance\n");
-	other();
+	str = ft_strdup("Testing");
+	printf("%s\n", str);
+
+	(void)str;
 	return (0);
 }

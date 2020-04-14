@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/10 22:31:42 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/11 15:42:01 by xinu             ###   ########.fr       */
+/*   Created: 2020/04/13 15:30:04 by xinu              #+#    #+#             */
+/*   Updated: 2020/04/13 16:01:30 by xinu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	result;
+#include <stdio.h>
 
-	result = 0;
-	while (str[result] != '\0')
-		result++;
-	return (result);
+void	call_test(void)
+{
+	printf("The call works!\n");
+}
+
+void	put_nbr(int num)
+{
+	printf("%d\n", num);
 }

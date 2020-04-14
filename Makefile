@@ -6,7 +6,7 @@
 #    By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 22:24:44 by xinu              #+#    #+#              #
-#    Updated: 2020/04/12 17:55:56 by xinu             ###   ########.fr        #
+#    Updated: 2020/04/13 17:16:47 by xinu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,12 @@ NAME = libasm.a
 FLAGS = -Wall -Wextra -Werror
 
 FILES = \
-	other \
-	say_hi \
+	ft_strlen \
+	ft_write \
+	ft_strcpy \
+	ft_strcmp \
+	ft_read \
+	ft_strdup \
 
 SRCS = $(addprefix srcs/, $(addsuffix .s, $(FILES)))
 
@@ -48,9 +52,14 @@ save: fclean
 
 TEST_SUITE = test_program
 
-test: re
-	rm -f $(TEST_SUITE)
-	gcc -o $(TEST_SUITE) $(FLAGS) main.c $(NAME)
+test: re test_clean
+	gcc -c utils.c
+	gcc -o $(TEST_SUITE) $(FLAGS) main.c $(NAME) utils.o
+	clear
+
+quick: test
+	@./$(TEST_SUITE)
 
 test_clean: fclean
-	rm -f test_program
+	rm -f utils.o
+	rm -f $(TEST_SUITE)
