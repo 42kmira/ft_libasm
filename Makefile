@@ -6,7 +6,7 @@
 #    By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/10 22:24:44 by xinu              #+#    #+#              #
-#    Updated: 2020/04/13 21:58:06 by xinu             ###   ########.fr        #
+#    Updated: 2020/04/25 19:22:19 by kmira            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 $(OBJS):
-	$(foreach file, $(FILES), nasm -f elf64 srcs/$(file).s -o $(file).o;)
+	$(foreach file, $(FILES), nasm -f macho64 srcs/$(file).s -o $(file).o;)
 
 clean:
 	rm -f $(OBJS)
