@@ -1,26 +1,28 @@
+
 section .text
-	global ft_write
+	global _ft_write
+	extern ___error
+	
 
-extern __errno_location
-
-ft_write:
-	mov eax, 1
+_ft_write:
+    mov rax, 0x2000004
 	syscall
+
 	push rax
 
-	cmp rax, 0
-	jle error
+	jc error
 
 	pop rax
+	
 	ret
 
 error:
-	call __errno_location
+	call ___error
 	mov r10, rax
 
 	pop rax
-	neg rax
 	mov [r10], rax
 
 	mov rax, -1
+
 	ret

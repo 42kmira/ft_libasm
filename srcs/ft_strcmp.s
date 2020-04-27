@@ -1,12 +1,12 @@
 section .text
-	global ft_strcmp
+	global _ft_strcmp
 
 %macro NULL_CHECK 1
 	cmp %1, 0
 	je exit
 %endmacro
 
-ft_strcmp:
+_ft_strcmp:
 	mov	r12, rdi
 	mov r13, rsi
 

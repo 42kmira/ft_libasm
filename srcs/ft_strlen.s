@@ -1,7 +1,8 @@
-section .text
-	global ft_strlen
+global _ft_strlen
 
-ft_strlen:
+section .text
+
+_ft_strlen:
 	mov r13, rdi
 	push rdi
 
