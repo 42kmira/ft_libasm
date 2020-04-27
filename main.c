@@ -6,7 +6,7 @@
 /*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/11 18:28:38 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/27 06:38:58 by kmira            ###   ########.fr       */
+/*   Updated: 2020/04/27 06:44:21 by kmira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int		main(void)
 	SET(count, 50)
 	SET(fd, open("author", O_RDONLY))
 
-	//READ(fd, buff, count, bytes_read, error)
+	READ(fd, buff, count, bytes_read, error)
 
-/*
+
 	SET(fd, -3)
 	READ(fd, buff, count, bytes_read, error)
 	SET(fd, 10)
@@ -51,14 +51,14 @@ int		main(void)
 	SET(str, malloc(sizeof(char) * 20))
 	SET(str_1, "Test")
 	STRCPY(str, str_1, out_str, error);
-*/
+
 	SET(fd, 1)
 	SET(count, 2)
 	SET(str_1, NULL)
 	WRITE(fd, str_1, count, bytes_read, error);
 
-//	SET(str, "")
-//	STRDUP(str, out_str, error)
+	SET(str, "")
+	STRDUP(str, out_str, error)
 
 	return (0);
 }
