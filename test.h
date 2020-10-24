@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xinu <xinu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:48:05 by xinu              #+#    #+#             */
-/*   Updated: 2020/04/25 22:50:39 by kmira            ###   ########.fr       */
+/*   Updated: 2020/10/24 00:51:54 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@
 
 #define READ(var1, var2, var3, ret, err)	\
 	errno = 0;																		\
+	printf("\e[0mTesting read(%d, \"%s\", %d)\n", syst_##var1, syst_##var2, syst_##var3);\
 	syst_##ret = read(syst_##var1, syst_##var2, syst_##var3);						\
 	syst_##err = errno;																\
 	printf(BOLDCYAN"[SYST]: | RET: %d and ERR: %d |\n", syst_##ret, syst_##err);	\
@@ -55,6 +56,7 @@
 
 #define STRCMP(var1, var2, ret, err)	\
 	errno = 0;																		\
+	printf("\e[0mTesting strcmp(\"%s\", \"%s\")\n", syst_##var1, syst_##var2);		\
 	syst_##ret = strcmp(syst_##var1, syst_##var2);									\
 	syst_##err = errno;																\
 	printf(BOLDCYAN"[SYST]: | RET: %d and ERR: %d |\n", syst_##ret, syst_##err);	\
@@ -66,6 +68,7 @@
 
 #define STRCPY(var1, var2, ret, err)	\
 	errno = 0;																		\
+	printf("\e[0mTesting strcpy(\"%s\", \"%s\")\n", syst_##var1, syst_##var2);		\
 	syst_##ret = strcpy(syst_##var1, syst_##var2);									\
 	syst_##err = errno;																\
 	printf(BOLDCYAN"[SYST]: | RET: %s and ERR: %d |\n", syst_##ret, syst_##err);	\
@@ -77,6 +80,7 @@
 
 #define STRDUP(var1, ret, err)	\
 	errno = 0;																		\
+	printf("\e[0mTesting strdup(\"%s\")\n", syst_##var1);							\
 	syst_##ret = strdup(syst_##var1);												\
 	syst_##err = errno;																\
 	printf(BOLDCYAN"[SYST]: | RET: %s and ERR: %d |\n", syst_##ret, syst_##err);	\
@@ -88,6 +92,7 @@
 
 #define STRLEN(var1, ret, err)	\
 	errno = 0;																		\
+	printf("\e[0mTesting strlen(\"%s\")\n", syst_##var1);							\
 	syst_##ret = strlen(syst_##var1);												\
 	syst_##err = errno;																\
 	printf(BOLDCYAN"[SYST]: | RET: %d and ERR: %d |\n", syst_##ret, syst_##err);	\
@@ -99,6 +104,7 @@
 
 #define WRITE(var1, var2, var3, ret, err)	\
 	errno = 0;																		\
+	printf("\e[0mTesting write(%d, \"%s\", %d)\n", syst_##var1, syst_##var2, syst_##var3);\
 	syst_##ret = write(syst_##var1, syst_##var2, syst_##var3);						\
 	NL																				\
 	syst_##err = errno;																\
